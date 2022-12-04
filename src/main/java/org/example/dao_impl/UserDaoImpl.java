@@ -57,6 +57,22 @@ public class UserDaoImpl extends ConnectAbsDAO implements UserDaoInter {
     }
 
     @Override
+    public boolean addUser(User u) {
+        try (Connection c = connect()) {
+            PreparedStatement stm = c.prepareStatement("insert into user (name,surname,email,phone) values (?,?,?,?)");
+            stm.setString(1, u.getName());
+            stm.setString(2, u.getSurname());
+            stm.setString(3, u.getEmail());
+            stm.setString(4, u.getPhone());
+            return stm.execute();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
     public boolean removeUser(int id) {
         try (Connection c = connect()) {
 

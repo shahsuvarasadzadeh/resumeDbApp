@@ -17,8 +17,7 @@ public class Main {
 //        List<User> list =userDaoInter.getAll();
 //        System.out.println("List: "+list);
 
-        User u=userDaoInter.getById(4);
-        u.setName("Raheddin");
-        userDaoInter.updateUser(u);
+        User u=new User(0,"shahsuvar","asadzade","asadzadeshahsuvar@gmail.com","0507265932");
+        userDaoInter.addUser(u);
     }
 }
