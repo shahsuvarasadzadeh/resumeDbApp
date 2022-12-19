@@ -16,8 +16,6 @@ public class Main {
        UserDaoInter userDaoInter =Context.instanceUserDao();
 //        List<User> list =userDaoInter.getAll();
 //        System.out.println("List: "+list);
-
-        User u=new User(0,"shahsuvar","asadzade","asadzadeshahsuvar@gmail.com","0507265932");
-        userDaoInter.addUser(u);
+        System.out.println(userDaoInter);
     }
 }
